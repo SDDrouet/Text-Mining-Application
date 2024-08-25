@@ -7,12 +7,13 @@ Esta aplicación de minería de texto permite ingresar un texto en una caja de t
 ## Instalación
 
 1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   ```
+   git clone https://github.com/SDDrouet/Text-Mining-Application.git
+   ```
 
 2. Navega al directorio del proyecto:
     ```
-    cd tu-repositorio
+    cd Text-Mining-Application
     ```
 3. Crea un entorno virtual:
     ```
