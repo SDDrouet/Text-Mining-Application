@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Análisis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1, h2 { color: #333; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 5px; }
+        .sentiment { font-weight: bold; }
+        .summary { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Resultados del Análisis</h1>
+    
+    <h2>Entidades Extraídas:</h2>
+    <ul>
+    {% for entity, label in results.entities %}
+        <li>{{ entity }} ({{ label }})</li>
+    {% endfor %}
+    </ul>
+    
+    <h2>Análisis de Sentimiento:</h2>
+    <p class="sentiment">
+    {% if results.sentiment > 0 %}
+        Positivo ({{ results.sentiment|round(2) }})
+    {% elif results.sentiment < 0 %}
+        Negativo ({{ results.sentiment|round(2) }})
+    {% else %}
+        Neutral ({{ results.sentiment|round(2) }})
+    {% endif %}
+    </p>
+    
+    <h2>Resumen Automático:</h2>
+    <p class="summary">{{ results.summary }}</p>
+    
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
